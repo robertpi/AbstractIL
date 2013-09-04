@@ -1,8 +1,8 @@
 This is FSharp.AbsIL, a tool kit for analyzing and creating CIL. It is used as the F# compilers backend. It uses the Apache 2.0 license.
 
-FSharp.AbsIL is a toolkit very similar to the excellent [mono.cecil](https://github.com/jbevain/cecil). As FSharp.AbsIL uses F# union types 
-to represent CIL F# users wishing to analyze files containing CIL may find it easier to use than mono.cecil as union types work very well
-with F# powerful pattern matching features.
+FSharp.AbsIL is a toolkit very similar to the excellent [mono.cecil](https://github.com/jbevain/cecil) for parsing or creating CIL file 
+(i.e. .NET assemblies / .dlls and .exes). As FSharp.AbsIL uses F# union types to represent CIL F# users wishing to analyze files containing CIL 
+may find it easier to use than mono.cecil as union types work very well with F# powerful pattern matching features.
 
 ## Samples
 
