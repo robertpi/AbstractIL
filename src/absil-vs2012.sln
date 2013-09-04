@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.AbsIL", "fsharp\FSharp.AbsIL\FSharp.AbsIL.fsproj", "{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "..\samples\crlish\TestApp\TestApp.csproj", "{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "crlish", "..\samples\crlish\clrish\crlish.fsproj", "{0898E907-DAB0-49FE-9F9A-5767D80D2376}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{A3F6BF8D-E804-4804-B39D-CC1704B98A2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "clrish", "clrish", "{E7297A96-1B40-4790-9D27-DEAEE95E7633}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}.Debug|x86.ActiveCfg = Debug|x86
+		{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}.Debug|x86.Build.0 = Debug|x86
+		{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}.Release|Any CPU.ActiveCfg = Release|x86
+		{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}.Release|Mixed Platforms.Build.0 = Release|x86
+		{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}.Release|x86.ActiveCfg = Release|x86
+		{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}.Release|x86.Build.0 = Release|x86
+		{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}.Release|x86.ActiveCfg = Release|Any CPU
+		{0898E907-DAB0-49FE-9F9A-5767D80D2376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0898E907-DAB0-49FE-9F9A-5767D80D2376}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0898E907-DAB0-49FE-9F9A-5767D80D2376}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0898E907-DAB0-49FE-9F9A-5767D80D2376}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0898E907-DAB0-49FE-9F9A-5767D80D2376}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0898E907-DAB0-49FE-9F9A-5767D80D2376}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0898E907-DAB0-49FE-9F9A-5767D80D2376}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0898E907-DAB0-49FE-9F9A-5767D80D2376}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0898E907-DAB0-49FE-9F9A-5767D80D2376}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0898E907-DAB0-49FE-9F9A-5767D80D2376}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7297A96-1B40-4790-9D27-DEAEE95E7633} = {A3F6BF8D-E804-4804-B39D-CC1704B98A2F}
+		{E3F21F5E-94A5-485D-9FC0-571D27E87EE8} = {E7297A96-1B40-4790-9D27-DEAEE95E7633}
+		{0898E907-DAB0-49FE-9F9A-5767D80D2376} = {E7297A96-1B40-4790-9D27-DEAEE95E7633}
+	EndGlobalSection
+EndGlobal

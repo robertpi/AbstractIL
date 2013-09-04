@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+# Copyright (c) 2002-2011 Microsoft Corporation. 
+#
+# 
+# 
+# 
+#
+#
+# You must not remove this notice, or any other, from this software.
+-->
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <FSharpSourcesRoot>$(MSBuildProjectDirectory)\..\..</FSharpSourcesRoot>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>FSharp.AbsIL</AssemblyName>
+    <DefineConstants>EXTENSIONTYPING;COMPILER;INCLUDE_METADATA_READER;INCLUDE_METADATA_WRITER;EXTENSIBLE_DUMPER;TYPE_PROVIDER_SECURITY;$(DefineConstants)</DefineConstants>
+    <NoWarn>$(NoWarn);44;62;9</NoWarn>
+    <ProjectGuid>{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}</ProjectGuid>
+    <AllowCrossTargeting>true</AllowCrossTargeting>
+    <BaseAddress>0x06800000</BaseAddress>
+    <OtherFlags>$(OtherFlags) /warnon:1182</OtherFlags>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- MonoDevelop likes these here to recognise the configurations -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\Debug</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' " />
+  <ItemGroup>
+    <None Include="illex.fsl" />
+    <None Include="ilpars.fsy" />
+    <FsSrGen Include="..\FSComp.txt">
+      <Link>FSComp.txt</Link>
+    </FsSrGen>
+    <Compile Include="obj\$(Configuration)\4.0\FSComp.fs">
+      <Link>FSComp.fs</Link>
+    </Compile>
+    <EmbeddedResource Include="..\FSStrings.resx">
+      <Link>FSStrings.resx</Link>
+    </EmbeddedResource>
+    <Compile Include="..\..\assemblyinfo\assemblyinfo.FSharp.Compiler.dll.fs">
+      <Link>assemblyinfo.FSharp.Compiler.dll.fs</Link>
+    </Compile>
+    <Compile Include="..\sr.fsi">
+      <Link>sr.fsi</Link>
+    </Compile>
+    <Compile Include="..\sr.fs">
+      <Link>sr.fs</Link>
+    </Compile>
+    <Compile Include="..\..\utils\prim-lexing.fsi">
+      <Link>prim-lexing.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\utils\prim-lexing.fs">
+      <Link>prim-lexing.fs</Link>
+    </Compile>
+    <Compile Include="..\..\utils\prim-parsing.fsi">
+      <Link>prim-parsing.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\utils\prim-parsing.fs">
+      <Link>prim-parsing.fs</Link>
+    </Compile>
+    <Compile Include="..\..\utils\resizearray.fsi">
+      <Link>resizearray.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\utils\resizearray.fs">
+      <Link>resizearray.fs</Link>
+    </Compile>
+    <Compile Include="..\..\utils\HashMultiMap.fsi">
+      <Link>HashMultiMap.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\utils\HashMultiMap.fs">
+      <Link>HashMultiMap.fs</Link>
+    </Compile>
+    <Compile Include="..\..\utils\TaggedCollections.fsi">
+      <Link>TaggedCollections.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\utils\TaggedCollections.fs">
+      <Link>TaggedCollections.fs</Link>
+    </Compile>
+    <Compile Include="..\FlatList.fs">
+      <Link>FlatList.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\illib.fs">
+      <Link>illib.fs</Link>
+    </Compile>
+    <Compile Include="..\..\utils\filename.fsi">
+      <Link>filename.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\utils\filename.fs">
+      <Link>filename.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\zmap.fsi">
+      <Link>zmap.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\zmap.fs">
+      <Link>zmap.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\zset.fsi">
+      <Link>zset.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\zset.fs">
+      <Link>zset.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\bytes.fsi">
+      <Link>bytes.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\bytes.fs">
+      <Link>bytes.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ildiag.fsi">
+      <Link>ildiag.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ildiag.fs">
+      <Link>ildiag.fs</Link>
+    </Compile>
+    <Compile Include="..\ReferenceResolution.fs">
+      <Link>ReferenceResolution.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\il.fsi">
+      <Link>il.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\il.fs">
+      <Link>il.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilx.fsi">
+      <Link>ilx.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilx.fs">
+      <Link>ilx.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilascii.fsi">
+      <Link>ilascii.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilascii.fs">
+      <Link>ilascii.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilprint.fsi">
+      <Link>ilprint.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilprint.fs">
+      <Link>ilprint.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilmorph.fsi">
+      <Link>ilmorph.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilmorph.fs">
+      <Link>ilmorph.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilsupp.fsi">
+      <Link>ilsupp.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilsupp.fs">
+      <Link>ilsupp.fs</Link>
+    </Compile>
+    <Compile Include="ilpars.fs" />
+    <Compile Include="illex.fs" />
+    <Compile Include="..\..\absil\ilbinary.fsi">
+      <Link>ilbinary.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilbinary.fs">
+      <Link>ilbinary.fs</Link>
+    </Compile>
+    <Compile Include="..\lib.fs">
+      <Link>lib.fs</Link>
+    </Compile>
+    <Compile Include="..\range.fsi">
+      <Link>range.fsi</Link>
+    </Compile>
+    <Compile Include="..\range.fs">
+      <Link>range.fs</Link>
+    </Compile>
+    <Compile Include="..\ErrorLogger.fs">
+      <Link>ErrorLogger.fs</Link>
+    </Compile>
+    <Compile Include="..\InternalCollections.fsi">
+      <Link>InternalCollections.fsi</Link>
+    </Compile>
+    <Compile Include="..\InternalCollections.fs">
+      <Link>InternalCollections.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilread.fsi">
+      <Link>ilread.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilread.fs">
+      <Link>ilread.fs</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilwrite.fsi">
+      <Link>ilwrite.fsi</Link>
+    </Compile>
+    <Compile Include="..\..\absil\ilwrite.fs">
+      <Link>ilwrite.fs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FSharp.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="ISymWrapper" />
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="ISymWrapper, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Condition="'$(TargetFramework)'=='net40'" />
+    <Reference Include="Microsoft.Build" Condition="'$(TargetFramework)'=='net40'" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" Condition="'$(TargetFramework)'=='net40'" />
+    <Reference Include="Microsoft.Build.Tasks.v4.0" Condition="'$(TargetFramework)'=='net40'" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')" />
+</Project>
