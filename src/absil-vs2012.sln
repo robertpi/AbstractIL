@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.AbsIL", "fsharp\FSharp.AbsIL\FSharp.AbsIL.fsproj", "{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.AbsIL", "FSharp.AbsIL\FSharp.AbsIL.fsproj", "{2E4D67B4-522D-4CF7-97E4-BA940F0B18F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "..\samples\crlish\TestApp\TestApp.csproj", "{E3F21F5E-94A5-485D-9FC0-571D27E87EE8}"
 EndProject

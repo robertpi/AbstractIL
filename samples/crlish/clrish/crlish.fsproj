@@ -55,7 +55,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\fsharp\FSharp.AbsIL\FSharp.AbsIL.fsproj">
+    <ProjectReference Include="..\..\..\src\FSharp.AbsIL\FSharp.AbsIL.fsproj">
       <Name>FSharp.AbsIL</Name>
       <Project>{2e4d67b4-522d-4cf7-97e4-ba940f0b18f3}</Project>
       <Private>True</Private>
