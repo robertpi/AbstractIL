@@ -27,7 +27,6 @@ open Microsoft.FSharp.Compiler.AbstractIL.Internal.BinaryConstants
 open Microsoft.FSharp.Compiler.AbstractIL.Internal.Support 
 open Microsoft.FSharp.Compiler.AbstractIL.Internal.Library 
 open Microsoft.FSharp.Compiler.DiagnosticMessage
-open Microsoft.FSharp.Compiler.ErrorLogger
 open Microsoft.FSharp.Compiler.Range
 
 open System.Collections.Generic 
@@ -247,7 +246,9 @@ let WritePdbInfo fixupOverlappingSequencePoints showTimes f fpdb info =
     
     try
         pdbw := pdbInitialize f fpdb
-    with _ -> error(Error(FSComp.SR.ilwriteErrorCreatingPdb(fpdb), rangeCmdArgs))
+    with _ -> 
+        let errorNo, message = FSComp.SR.ilwriteErrorCreatingPdb(fpdb)
+        failwithf "FS%i %s %A" errorNo message  rangeCmdArgs
 
     match info.EntryPoint with 
     | None -> () 
@@ -379,7 +380,9 @@ let (?) this memb (args:'Args) : 'R =
     let bestMatch = methods |> Array.tryFind (fun mi -> mi.Name = memb && mi.GetParameters().Length = args.Length)
     match bestMatch with
     | Some(mi) -> unbox(mi.Invoke(this, args))        
-    | None -> error(Error(FSComp.SR.ilwriteMDBMemberMissing(memb), rangeCmdArgs))
+    | None -> 
+        let errorNo, message = FSComp.SR.ilwriteMDBMemberMissing(memb)
+        failwithf "FS%i %s %A" errorNo message  rangeCmdArgs
 
 // Creating instances of needed classes from 'Mono.CompilerServices.SymbolWriter' assembly
 
@@ -407,7 +410,9 @@ let WriteMdbInfo fmdb f info =
     // Report an error if the assembly is not available.    
     let wr = 
         try createWriter f
-        with e -> error(Error(FSComp.SR.ilwriteErrorCreatingMdb(), rangeCmdArgs))
+        with e -> 
+            let errorNo, message = FSComp.SR.ilwriteErrorCreatingMdb()
+            failwithf "FS%i %s %A" errorNo message  rangeCmdArgs
 
     // NOTE: MonoSymbolWriter doesn't need information about entrypoints, so 'info.EntryPoint' is unused here.
     // Write information about Documents. Returns '(SourceFileEntry*CompileUnitEntry)[]'
@@ -1055,7 +1060,7 @@ let rec GetIdxForTypeDef cenv key  =
     with 
       :? KeyNotFoundException -> 
         let (TdKey (enc,n) ) = key
-        errorR(InternalError("One of your modules expects the type '"+String.concat "." (enc@[n])+"' to be defined within the module being emitted.  You may be missing an input file",range0))
+        printfn "%s" ("One of your modules expects the type '"+String.concat "." (enc@[n])+"' to be defined within the module being emitted.  You may be missing an input file") 
         0
     
 // -------------------------------------------------------------------- 
@@ -1628,7 +1633,7 @@ let rec GetMethodDefIdx cenv md =
 and FindFieldDefIdx cenv fdkey = 
     try cenv.fieldDefs.GetTableEntry fdkey 
     with :? KeyNotFoundException -> 
-      errorR(InternalError("The local field "+fdkey.Name+" was referenced but not declared",range0));
+      printfn "%s" ("The local field "+fdkey.Name+" was referenced but not declared")
       1
 
 and GetFieldDefAsFieldDefIdx cenv tidx fd = 

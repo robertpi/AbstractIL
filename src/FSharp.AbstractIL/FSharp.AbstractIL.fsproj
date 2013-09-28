@@ -35,8 +35,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' " />
   <ItemGroup>
-    <None Include="illex.fsl" />
-    <None Include="ilpars.fsy" />
     <FsSrGen Include="FSComp.txt">
     </FsSrGen>
     <Compile Include="FSComp.fs">
@@ -119,8 +117,6 @@
     </Compile>
     <Compile Include="ilsupp.fs">
     </Compile>
-    <Compile Include="ilpars.fs" />
-    <Compile Include="illex.fs" />
     <Compile Include="ilbinary.fsi">
     </Compile>
     <Compile Include="ilbinary.fs">
@@ -130,8 +126,6 @@
     <Compile Include="range.fsi">
     </Compile>
     <Compile Include="range.fs">
-    </Compile>
-    <Compile Include="ErrorLogger.fs">
     </Compile>
     <Compile Include="InternalCollections.fsi">
     </Compile>
